@@ -1,7 +1,7 @@
 const hrs = document.getElementById("hrs");
 const min = document.getElementById("min");
 const sec = document.getElementById("sec");
-
+const ampm = document.getElementById("ampm")
 let clock = ()=>{
     setInterval(()=>{
         let date = new Date
@@ -18,8 +18,10 @@ let clock = ()=>{
     setInterval(()=>{
         let date = new Date
         hours = date.getHours();
-        hrs.innerHTML = hours;
-        hours < 10 ? hrs.innerHTML = "0"+hours : hours; 
+        let mod = hours % 12;
+        // hrs.innerHTML = mod;
+        ampm.innerHTML =  hours >= 12 ?  'PM' : 'AM';
+        mod < 10 ? hrs.innerHTML = "0"+mod : mod;
     },1000)
 }
 clock();

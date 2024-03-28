@@ -74,3 +74,9 @@
 #sec::after{
     content: 'SEC';
 }
+#ampm{
+    font-size: 20px;
+    display: flex;
+    position: relative;
+    top: 30px;
+}
